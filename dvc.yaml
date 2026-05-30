@@ -1,0 +1,23 @@
+stages:
+  ingest:
+    cmd: python scripts/ingest.py
+    deps:
+      - scripts/ingest.py
+      - data/raw/data.csv
+
+  validate:
+    cmd: python scripts/validate.py
+    deps:
+      - data/raw/data.csv
+      - scripts/validate.py
+    outs:
+      - reports/validation.json:
+          cache: false
+
+  preprocess:
+    cmd: python scripts/preprocess.py
+    deps:
+      - data/raw/data.csv
+      - scripts/preprocess.py
+    outs:
+      - data/processed/cleaned.csv
