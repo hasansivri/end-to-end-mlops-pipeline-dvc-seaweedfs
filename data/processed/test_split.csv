@@ -1,0 +1,5 @@
+amount,category_clothing,category_dining,category_electronics,category_groceries,is_fraud
+25.5,False,False,False,True,0
+38.0,False,True,False,False,0
+65.0,False,False,False,True,0
+1250.0,False,False,True,False,1
